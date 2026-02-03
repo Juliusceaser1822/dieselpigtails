@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VGT Repair – Diesel Pigtails</title>
+    <style>
+    /*
+     * Global styles for the Diesel Pigtails web site.
+     *
+     * The style sheet defines a modern, responsive layout using a clean sans‑serif
+     * typography and a restrained colour palette built around dark blues and
+     * greys. The goal is to communicate professionalism and trust while staying
+     * simple enough to allow customers to find the products and information
+     * they need quickly. All sections are designed using CSS Flexbox or Grid to
+     * ensure the layout adapts gracefully to various screen sizes.
+     */
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #1f2a44;
+      background-color: #f5f7fa;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #004080;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #002c60;
+    }
+
+    header {
+      background-color: #002c60;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #a3d1ff;
+    }
+
+    .hero {
+      position: relative;
+      background: url('assets/images/hero-bg.png') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 34, 68, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      color: #dbe7fa;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: #002c60;
+      text-align: center;
+    }
+
+    /* Use the same card and layout styles defined in index */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .feature {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .feature h3 {
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      color: #004080;
+    }
+    .feature p {
+      font-size: 0.95rem;
+      color: #4a5a73;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .category {
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+    .category:hover {
+      transform: translateY(-4px);
+    }
+    .category img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .category-content {
+      padding: 16px;
+    }
+    .category-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #002c60;
+    }
+    .category-content p {
+      font-size: 0.9rem;
+      color: #4a5a73;
+    }
+    footer {
+      background-color: #002c60;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #a3d1ff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav ul {
+        gap: 16px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav-wrapper">
+        <div class="logo">Diesel Pigtails</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vgt.html">VGT Repair</a></li>
+            <li><a href="index.html#brands">Brands</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Variable Geometry Turbo (VGT) Repair</h1>
+        <p>
+          Keep your turbo performing at its best. Replace brittle VGT solenoid
+          connectors with our premium repair pigtails.
+        </p>
+        <a href="#products" class="btn">Shop VGT Pigtails</a>
+      </div>
+    </section>
+    <section id="about-vgt">
+      <div class="container">
+        <h2>Why Do VGT Connectors Fail?</h2>
+        <p>
+          Variable geometry turbochargers rely on an electric solenoid to adjust
+          vane position for optimal boost. On engines like Ford’s 6.0L and
+          6.7L Powerstroke and many medium‑duty diesels, the solenoid sits
+          directly on the turbo housing. This high‑heat environment causes
+          plastic connector bodies to become brittle and leads to broken
+          terminals or intermittent connections. When the connector fails the
+          engine control module cannot command vane position correctly, causing
+          turbo codes and drivability issues.
+        </p>
+        <p>
+          Replacing the entire wiring harness is expensive and unnecessary when
+          a simple pigtail repair kit will solve the problem. Our VGT solenoid
+          pigtails feature genuine OEM terminals and seals to match your factory
+          harness. Each kit includes heat‑shrink solder sleeves and tubing so
+          you can make a durable splice without special tools.
+        </p>
+      </div>
+    </section>
+    <section id="products">
+      <div class="container">
+        <h2>Popular VGT Repair Kits</h2>
+        <div class="categories">
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="VGT solenoid pigtail for Ford Powerstroke" />
+            <div class="category-content">
+              <h3>Powerstroke VGT Pigtail</h3>
+              <p>
+                Fits 6.0L &amp; 6.7L Ford Powerstroke engines. Includes two
+                heat‑shrink solder sleeves and OEM terminals for a reliable
+                connection. Replaces brittle connectors on the turbo solenoid.
+              </p>
+            </div>
+          </div>
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="Duramax turbo actuator harness" />
+            <div class="category-content">
+              <h3>Duramax Turbo Actuator Harness</h3>
+              <p>
+                Compatible with 2007–2016 Duramax VGT actuators. Restores
+                vane control functionality and eliminates check engine lights
+                caused by cracked connectors.
+              </p>
+            </div>
+          </div>
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="Cummins VGT repair pigtail" />
+            <div class="category-content">
+              <h3>Cummins VGT Repair Kit</h3>
+              <p>
+                Weatherproof connector for 5.9L &amp; 6.7L Cummins HE351 and
+                HE300VG turbos. OEM fit with integrated seals and stainless
+                terminals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tips">
+      <div class="container">
+        <h2>Replacement Tips</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>Inspect Wiring</h3>
+            <p>
+              Always check the harness condition. Corroded or broken wires
+              should be trimmed back to clean copper before splicing a new
+              pigtail.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Use Heat Shrink Solder</h3>
+            <p>
+              Our kits include heat‑shrink solder sleeves for a strong,
+              weatherproof joint. Simply crimp lightly, heat until the solder
+              melts and the sleeve shrinks.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Replace During Turbo Service</h3>
+            <p>
+              We recommend replacing the VGT connector whenever the turbo is
+              removed. Access is much easier and the small investment can
+              prevent future failures.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cta">
+      <div class="container" style="text-align:center;">
+        <h2>Ready to Restore Your Boost Control?</h2>
+        <p>
+          Browse our full range of VGT solenoid repair pigtails and put an end
+          to turbo trouble codes for good.
+        </p>
+        <a href="index.html#categories" class="btn">View All Categories</a>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>© <span id="year"></span> Diesel Pigtails. All rights reserved.</p>
+        <p>
+          <a href="index.html">Home</a> |
+          <a href="vgt.html">VGT Repair</a> |
+          <a href="index.html#brands">Brands</a> |
+          <a href="index.html#contact">Contact</a>
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

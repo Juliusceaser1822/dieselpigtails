@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diesel Pigtails – Premium Diesel Electrical Connectors</title>
+    <!-- Inline styles ensure the site renders correctly even when opened from a zip -->
+    <style>
+    /*
+     * Global styles for the Diesel Pigtails web site.
+     *
+     * The style sheet defines a modern, responsive layout using a clean sans‑serif
+     * typography and a restrained colour palette built around dark blues and
+     * greys. The goal is to communicate professionalism and trust while staying
+     * simple enough to allow customers to find the products and information
+     * they need quickly. All sections are designed using CSS Flexbox or Grid to
+     * ensure the layout adapts gracefully to various screen sizes.
+     */
+
+    /* Import a Google font for a professional look. If the font fails to load
+       the browser will fall back to the built in sans‑serif stack. */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    /* CSS Reset – normalise margins and paddings to avoid browser defaults. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #1f2a44; /* dark slate for text */
+      background-color: #f5f7fa; /* light grey background */
+    }
+
+    /* Utility classes */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #004080;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #002c60;
+    }
+
+    /* Header and navigation */
+    header {
+      background-color: #002c60;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #a3d1ff;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('assets/images/hero-bg.png') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 34, 68, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      color: #dbe7fa;
+    }
+
+    /* Section styling */
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: #002c60;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .feature {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      color: #004080;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: #4a5a73;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .category {
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-4px);
+    }
+
+    .category img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .category-content {
+      padding: 16px;
+    }
+
+    .category-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #002c60;
+    }
+
+    .category-content p {
+      font-size: 0.9rem;
+      color: #4a5a73;
+    }
+
+    .brands {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .brand-card {
+      flex: 1 1 180px;
+      max-width: 200px;
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .brand-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #004080;
+    }
+
+    .brand-card p {
+      font-size: 0.85rem;
+      color: #4a5a73;
+    }
+
+    /* Contact section */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 32px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #002c60;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      border: 1px solid #cdd3dd;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      background-color: #004080;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background-color: #002c60;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #002c60;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #a3d1ff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav ul {
+        gap: 16px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container nav-wrapper">
+        <div class="logo">Diesel Pigtails</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vgt.html">VGT Repair</a></li>
+            <li><a href="#brands">Brands</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Your Source for Diesel Pigtail Connectors</h1>
+        <p>
+          Premium OEM‑quality pigtails and repair harnesses for heavy‑duty diesel
+          engines. Keep your truck running reliably with connectors designed to
+          withstand heat, vibration and harsh conditions.
+        </p>
+        <a href="vgt.html" class="btn">Learn About VGT Repair</a>
+      </div>
+    </section>
+    <section id="why">
+      <div class="container">
+        <h2>Why Choose Diesel Pigtails?</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>OEM Quality</h3>
+            <p>
+              We supply genuine OEM‑grade connectors and pigtails. Using the
+              correct terminals and seals ensures a perfect fit and a secure,
+              long‑lasting connection. Avoid the misshapen terminals found in
+              imported connectors and trust parts built to the same standards as
+              your original harness.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Built for Durability</h3>
+            <p>
+              Diesel engines run hot and vibrate. Over time wiring harness
+              connectors can crack or become brittle. Our pigtails are designed
+              to cope with high‑heat locations around the turbo and engine bay
+              so you can avoid intermittent codes and restore proper boost and
+              fuel control.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Comprehensive Coverage</h3>
+            <p>
+              Whether you own a Cummins, Powerstroke, Duramax or Paccar‑powered
+              truck, we offer repair harnesses and sensor pigtails to cover
+              common failure points. From turbo VGT and fuel control actuators
+              to injector and sensor connectors – we have you covered.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Same‑Day Shipping</h3>
+            <p>
+              When your truck is down, every hour counts. We keep thousands of
+              connectors, terminals, seals, clips and repair tools in stock for
+              immediate shipment. Get the parts you need, fast, and get back on
+              the road.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="categories">
+      <div class="container">
+        <h2>Popular Categories</h2>
+        <div class="categories">
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="VGT connector illustration" />
+            <div class="category-content">
+              <h3>VGT Solenoid Pigtails</h3>
+              <p>
+                Replace the turbo actuator harness with OEM‑quality pigtails. A
+                fresh connector prevents heat‑induced failure and restores
+                accurate boost control.
+              </p>
+            </div>
+          </div>
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="Fuel control actuator illustration" />
+            <div class="category-content">
+              <h3>Fuel Control Actuator</h3>
+              <p>
+                Harness repair kits for Cummins FCA sensors provide a
+                weatherproof and secure replacement so you don’t have to
+                replace the entire engine harness.
+              </p>
+            </div>
+          </div>
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="Injector pigtail illustration" />
+            <div class="category-content">
+              <h3>Injector &amp; Sensor Pigtails</h3>
+              <p>
+                Restore communication with new connectors for injectors, MAF,
+                MAP, crank and cam sensors. Stop chasing intermittent faults.
+              </p>
+            </div>
+          </div>
+          <div class="category">
+            <img src="assets/images/hero-bg.png" alt="Trailer wiring illustration" />
+            <div class="category-content">
+              <h3>Trailer &amp; Chassis Wiring</h3>
+              <p>
+                Heavy‑duty plugs, sockets and harnesses for trailers and body
+                wiring keep your lights and ABS systems functioning reliably on
+                every haul.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="brands">
+      <div class="container">
+        <h2>Brands We Support</h2>
+        <div class="brands">
+          <div class="brand-card">
+            <h3>Cummins</h3>
+            <p>
+              Harness repair kits and pigtails for 5.9L and 6.7L Cummins
+              engines used in Dodge/Ram heavy‑duty trucks.
+            </p>
+          </div>
+          <div class="brand-card">
+            <h3>Powerstroke</h3>
+            <p>
+              Connectors and pigtails for Ford’s 6.0L and 6.7L Powerstroke
+              engines, including VGT solenoid and IPR/EBPV harnesses.
+            </p>
+          </div>
+          <div class="brand-card">
+            <h3>Duramax</h3>
+            <p>
+              Electrical repair parts for GM’s Duramax diesel range – from
+              injectors to turbo control connectors.
+            </p>
+          </div>
+          <div class="brand-card">
+            <h3>Paccar</h3>
+            <p>
+              Wiring harness pigtails for Kenworth and Peterbilt trucks
+              equipped with MX‑series engines.
+            </p>
+          </div>
+          <div class="brand-card">
+            <h3>International &amp; Navistar</h3>
+            <p>
+              Pigtail connectors for International and Navistar engines used
+              across medium and heavy‑duty truck lines.
+            </p>
+          </div>
+          <div class="brand-card">
+            <h3>Mack &amp; Volvo</h3>
+            <p>
+              V‑mac harness repair solutions and sensor pigtails to keep your
+              Mack or Volvo powerplant running smoothly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="#" method="post" onsubmit="alert('Thank you for your message! We will get back to you shortly.'); return false;">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>
+          © <span id="year"></span> Diesel Pigtails. All rights reserved.
+          Designed for heavy‑duty enthusiasts.
+        </p>
+        <p>
+          <a href="vgt.html">VGT Repair</a> |
+          <a href="#categories">Categories</a> |
+          <a href="#brands">Brands</a> |
+          <a href="#contact">Contact</a>
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Set current year in footer automatically
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
